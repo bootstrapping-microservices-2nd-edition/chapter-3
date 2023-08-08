@@ -18,8 +18,7 @@ const app = express();
 //
 // Registers a HTTP GET route for video streaming.
 //
-app.get("/video", async (req, res) => { // Route for streaming video.
-    
+app.get("/video", async (req, res) => {
     const videoPath = "./videos/SampleVideo_1280x720_1mb.mp4";
     const stats = await fs.promises.stat(videoPath);
 
@@ -34,5 +33,5 @@ app.get("/video", async (req, res) => { // Route for streaming video.
 // Starts the HTTP server.
 //
 app.listen(PORT, () => {
-    console.log(`Microservice listening on port ${PORT}, point your browser at http://localhost:${4000}/video`);
+    console.log(`Microservice listening on port ${PORT}, point your browser at http://localhost:${PORT}/video`);
 });
